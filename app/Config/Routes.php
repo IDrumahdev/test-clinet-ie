@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/master-barang','MasterBarangController::index');
+$routes->get('/transaksi-masuk','TransaksiMasukController::index');
