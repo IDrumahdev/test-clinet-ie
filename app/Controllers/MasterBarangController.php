@@ -9,13 +9,14 @@ class MasterBarangController extends BaseController
 {
     public function index()
     {
-        // $client = Services::curlrequest();
-        // $response = $client->request('GET', 'http://localhost:8080/api/v1/barang/3');
-        // $result = json_decode($response->getBody());
-        //     return view('welcome_message', ['result' => $result]);
+        $client = Services::curlrequest();
+        $response = $client->request('GET', 'http://localhost:8080/api/v1/barang');
+        $result = json_decode($response->getBody());
+        // dd($result->result[0]->id_barang);
+        // exit;
 
         echo view('layouts/header');
         echo view('layouts/navbar');
-        echo view('home/index');
+        echo view('home/index',['result' => $result]);
     }
 }
