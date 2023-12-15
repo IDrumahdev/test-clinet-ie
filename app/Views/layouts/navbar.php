@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/transaksi-keluar">
                         Transaksi Keluar
                     </a>
                 </li>
