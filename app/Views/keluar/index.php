@@ -6,7 +6,7 @@
             Transaksi Keluar
         </div>
 
-        <table class="table caption-top" id="myTable">
+        <table class="table caption-top" id="myTableKeluar">
             <caption>List of users</caption>
             <thead>
                 <tr>
@@ -14,6 +14,7 @@
                     <th scope="col">Nama Barang</th>
                     <th scope="col">QTY Keluar</th>
                     <th scope="col">Satuan</th>
+                    <th scope="col">Tanggal</th>
                     <th scope="col">Catatan</th>
                     <th scope="col">Vendor</th>
                 </tr>
@@ -58,6 +59,6 @@
 
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
+        $('#myTableKeluar').DataTable();
     });
 </script>

@@ -6,7 +6,7 @@
             Transaksi Masuk
         </div>
 
-        <table class="table caption-top" id="myTable">
+        <table class="table caption-top" id="myTableMasuk">
             <caption>List of users</caption>
             <thead>
                 <tr>
@@ -22,6 +22,17 @@
             <tbody>
                 <?php
                 $result_count = count($result->results);
+                if($result_count < 1) {
+                    echo '<tr>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                    echo '</tr>';
+                } else {
                     for ($i = 0; $i < $result_count; $i++) {
                         echo '<tr>';
                         echo '<td>' . $result->results[$i]->id_transaksi_masuk . '</td>';
@@ -33,6 +44,7 @@
                         echo '<td>' . $result->results[$i]->vendor . '</td>';
                         echo '</tr>';
                     }
+                }
                 ?>
             </tbody>
         </table>
@@ -46,6 +58,6 @@
 
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
+        $('#myTableMasuk').DataTable();
     });
 </script>
