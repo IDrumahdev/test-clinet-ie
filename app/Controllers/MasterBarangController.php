@@ -11,9 +11,7 @@ class MasterBarangController extends BaseController
     {
         $client = Services::curlrequest();
         $response = $client->request('GET', 'http://localhost:8080/api/v1/barang');
-        $result = json_decode($response->getBody());
-        // dd($result->result[0]->id_barang);
-        // exit;
+        $result     = json_decode($response->getBody());
 
         echo view('layouts/header');
         echo view('layouts/navbar');

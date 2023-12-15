@@ -18,12 +18,20 @@
             <tbody>
                 <?php
                 $result_count = count($result->result);
-                    for ($i = 0; $i < $result_count; $i++) {
-                        echo '<tr>';
-                        echo '<td>' . $result->result[$i]->id_barang . '</td>';
-                        echo '<td>' . $result->result[$i]->nama_barang . '</td>';
-                        echo '<td>' . $result->result[$i]->satuan . '</td>';
-                        echo '</tr>';
+                    if($result_count < 1) {
+                            echo '<tr>';
+                                echo '<td></td>';
+                                echo '<td></td>';
+                                echo '<td></td>';
+                            echo '</tr>';
+                    } else {
+                        for ($i = 0; $i < $result_count; $i++) {
+                            echo '<tr>';
+                                echo '<td>' . $result->result[$i]->id_barang . '</td>';
+                                echo '<td>' . $result->result[$i]->nama_barang . '</td>';
+                                echo '<td>' . $result->result[$i]->satuan . '</td>';
+                            echo '</tr>';
+                        }
                     }
                 ?>
             </tbody>

@@ -21,16 +21,29 @@
             <tbody>
                 <?php
                 $result_count = count($result->results);
-                    for ($i = 0; $i < $result_count; $i++) {
+
+                    if($result_count < 1) {
                         echo '<tr>';
-                        echo '<td>' . $result->results[$i]->id_transaksi_keluar . '</td>';
-                        echo '<td>' . $result->results[$i]->nama_barang . '</td>';
-                        echo '<td>' . $result->results[$i]->qty_keluar . '</td>';
-                        echo '<td>' . $result->results[$i]->satuan . '</td>';
-                        echo '<td>' . $result->results[$i]->tanggal_keluar . '</td>';
-                        echo '<td>' . $result->results[$i]->catatan . '</td>';
-                        echo '<td>' . $result->results[$i]->vendor . '</td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
+                            echo '<td></td>';
                         echo '</tr>';
+                    } else {
+                        for ($i = 0; $i < $result_count; $i++) {
+                            echo '<tr>';
+                                echo '<td>' . $result->results[$i]->id_transaksi_keluar . '</td>';
+                                echo '<td>' . $result->results[$i]->nama_barang . '</td>';
+                                echo '<td>' . $result->results[$i]->qty_keluar . '</td>';
+                                echo '<td>' . $result->results[$i]->satuan . '</td>';
+                                echo '<td>' . $result->results[$i]->tanggal_keluar . '</td>';
+                                echo '<td>' . $result->results[$i]->catatan . '</td>';
+                                echo '<td>' . $result->results[$i]->vendor . '</td>';
+                            echo '</tr>';
+                        }   
                     }
                 ?>
             </tbody>
